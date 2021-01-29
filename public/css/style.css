@@ -1,0 +1,11 @@
+header .atas .container .kanan a {
+  font-size: 14.5px;
+  color: #a39f9f;
+}
+
+@media screen and (max-width: 576px) {
+  header .atas .container .kanan a {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
