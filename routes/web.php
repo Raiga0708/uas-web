@@ -11,9 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::prefix('/')
+    ->namespace('Home')
+    ->group(function () {
+        Route::resource('/', 'IndexController');
+        // Route::resource('/ginstagram', 'GinstagramController');
+        // Route::resource('/program', 'ProgramController');
+        // Route::resource('/tv', 'TvController');
+        // Route::resource('/berita', 'BeritaController');
+    });
+
+    Route::prefix('home')
+    ->namespace('Admin')
+    ->group(function () {
+        Route::resource('/', 'DashboardController');
+        Route::resource('/talk', 'TalkController');
+        // Route::resource('/galeri', 'GaleriController');
+        // Route::resource('/rekomendasi', 'RekomendasiController');
+        // Route::resource('/jadwaltv', 'JadwaltvController');
+    });
 
 Auth::routes();
 
